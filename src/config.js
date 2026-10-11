@@ -3,7 +3,7 @@
 // Paste your Google Apps Script Web App URL here (ends with /exec).
 // While it's empty, the app runs in TEST MODE: random group, nothing is saved,
 // and the collected data is shown at the end instead.
-export const APPS_SCRIPT_URL = "";
+export const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylGj-mHGP-M_RkYutj5FEsWPwdzWfbzUjBawkc0hdqzaBirOf_1V-BnRd5xgEHEr6spg/exec";
 
 // Seconds allowed per estimate. Use null for no time limit.
 export const TIME_LIMIT_SEC = 10;
