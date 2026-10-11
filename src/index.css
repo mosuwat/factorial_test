@@ -1,0 +1,100 @@
+:root {
+  --bg: #f4f4f1;
+  --card: #ffffff;
+  --text: #1d1d1b;
+  --muted: #6b6b66;
+  --accent: #2f5d50;
+  --accent-text: #ffffff;
+  --border: #dcdcd6;
+  --urgent: #b3261e;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--bg); }
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.test-banner {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: #f2c94c; color: #3a2e00;
+  text-align: center; font-size: 13px; padding: 6px;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+}
+.card.center { text-align: center; }
+h1, h2 { margin-top: 0; }
+p { line-height: 1.6; }
+.muted { color: var(--muted); font-size: 14px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; margin: 20px 0; }
+.field span { font-size: 14px; color: var(--muted); }
+
+input {
+  font: inherit;
+  font-size: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 100%;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+button {
+  font: inherit;
+  font-size: 17px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.trial { text-align: center; padding-top: 48px; }
+.trial .label { color: var(--muted); margin: 0; }
+.expr {
+  font-size: clamp(22px, 5vw, 34px);
+  font-variant-numeric: tabular-nums;
+  margin: 12px 0 28px;
+  word-spacing: 2px;
+}
+.trial form { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.answer { max-width: 320px; text-align: center; }
+
+.timer {
+  position: absolute; top: 14px; right: 18px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 18px;
+}
+.timer.urgent { color: var(--urgent); font-weight: 600; }
+
+.debug {
+  text-align: left; font-size: 12px; background: #f6f6f3;
+  padding: 12px; border-radius: 8px; overflow-x: auto;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 24px 18px; }
+  .trial { padding-top: 44px; }
+  .expr { font-size: clamp(17px, 5.2vw, 22px); word-spacing: 0; }
+}
